@@ -14,21 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
+    - name: 拉取代码
       uses: actions/checkout@v2
     
-    - name: Install Node.js
+    - name: 安装 node
       uses: actions/setup-node@v1
       with:
         node-version: 13.x
     
-    - name: Install NPM packages
+    - name: 安装包依赖
       run: npm install
-
-    - name: Install NPM packages2
-      run: npm ci
     
-    - name: Build project
+    - name: 构建项目
       run: npm run build
 
     - name: Upload production-ready build files
