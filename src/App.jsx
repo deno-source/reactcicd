@@ -1,5 +1,4 @@
-import { Button,Tooltip } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import { Button } from "antd";
 import "./App.css";
 
 function App() {
