@@ -32,3 +32,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: build
         run: npm run build
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
