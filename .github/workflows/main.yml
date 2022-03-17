@@ -28,7 +28,7 @@ jobs:
       - name: 构建项目
         run: npm run build
 
-      - name: Upload production-ready build files
+      - name: 更新构建文件
         uses: actions/upload-artifact@v2
         with:
           name: production-files
@@ -47,7 +47,7 @@ jobs:
           name: production-files
           path: ./build
 
-      - name: Deploy to gh-pages
+      - name: 发布
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
