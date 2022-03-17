@@ -14,21 +14,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 拉取代码
+      - name: code
         uses: actions/checkout@v2
 
-      - name: 安装 node
+      - name: node
         uses: actions/setup-node@v1
         with:
           node-version: 13.x
 
-      - name: 安装包依赖
+      - name: dependence
         run: npm install
 
-      - name: 构建项目
+      - name: build
         run: npm run build
 
-      - name: 更新构建文件
+      - name: update
         uses: actions/upload-artifact@v2
         with:
           name: production-files
@@ -47,7 +47,7 @@ jobs:
           name: production-files
           path: ./build
 
-      - name: 发布
+      - name: release
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
